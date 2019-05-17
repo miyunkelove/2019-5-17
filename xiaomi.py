@@ -25,15 +25,34 @@ def circle_area(xc, yc, xp, yp):
     return area(radius)
 
 def factoral(n):
-    if n == 0:
+    if not isinstance(n, int):
+        print('Factorial is only defined for integers.')
+        return None
+    elif n < 0:
+        print('Factorial is only defined for negative integers.')
+        return None
+    elif n == 0:
         return 1
     else:
         return n * factoral(n - 1)
 
+def factoral1(n):
+    space = ' ' * (4 * n)
+    print(space, 'factorial', n)
+    if n == 0:
+        print(space, 'returning 1')
+        return 1
+    else:
+        recurse = factoral1(n - 1)
+        result = n * recurse
+        print(space, 'returning', result)
+        return result
+
 def is_between(x, y, z):
     return (x <= y <= z)
 
-print(factoral(50))
+factoral1(4)
+#print(factoral(50))
 #print(circle_area(1, 2, 4, 6))
 #print(distance(1, 2, 4, 6))
 #print(compare(1, 2))
