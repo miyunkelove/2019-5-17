@@ -24,6 +24,16 @@ def circle_area(xc, yc, xp, yp):
     radius = distance(xc, yc, xp, yp)
     return area(radius)
 
-print(circle_area(1, 2, 4, 6))
+def factoral(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factoral(n - 1)
+
+def is_between(x, y, z):
+    return (x <= y <= z)
+
+print(factoral(50))
+#print(circle_area(1, 2, 4, 6))
 #print(distance(1, 2, 4, 6))
 #print(compare(1, 2))
